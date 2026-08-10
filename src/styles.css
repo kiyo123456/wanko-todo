@@ -33,6 +33,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/*
+ * 和紙の質感を全面に敷く。読み込みは初回だけで、以降はテンポに一切関与しない。
+ * multiply で繊維の影だけを乗せ、地の色は CSS 側の生成り色に決めさせる。
+ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('./assets/washi.jpg');
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  /* 上げすぎると地の生成り色が黄土に転び、文字のコントラストも落ちる */
+  opacity: 0.16;
+  pointer-events: none;
+}
+
 h1,
 h2,
 p,
