@@ -19,8 +19,8 @@
 ## 使い方
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 - **Enter / Space** で完了。連打でテンポを作るのがこのアプリの肝
